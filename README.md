@@ -23,6 +23,7 @@ CodePulse transforms the **Logitech MX Creative Console** into a developer's phy
 | **Actions Ring (MX Master 4)** | Scroll through previous review outputs |
 
 ---
+![Image_202602252050](https://github.com/user-attachments/assets/2ec8119f-1046-4d21-b9dd-3a47a9de1056)
 
 ## 🤖 The 9 Review Personas
 
