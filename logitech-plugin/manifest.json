@@ -1,0 +1,199 @@
+{
+    "SDKTarget": "com.logitech.gaming.mouseindicator",
+    "Name": "CodePulse",
+    "Version": "1.0.0",
+    "Author": "CodePulse Team",
+    "Id": "com.codepulse.plugin",
+    "Category": "Productivity",
+    "Description": "Physical code review console — 9 LCD keys trigger AI-powered code analysis via Google Gemini",
+    "Actions": [
+        {
+            "Name": "Security Scan",
+            "Id": "com.codepulse.security",
+            "Tooltip": "Scan selected code for security vulnerabilities",
+            "States": [
+                {
+                    "Image": "icons/security.png",
+                    "Title": "Security"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "security"
+            }
+        },
+        {
+            "Name": "Performance Analysis",
+            "Id": "com.codepulse.performance",
+            "Tooltip": "Analyze code for performance issues and Big-O complexity",
+            "States": [
+                {
+                    "Image": "icons/performance.png",
+                    "Title": "Perf"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "performance"
+            }
+        },
+        {
+            "Name": "Auto Docs",
+            "Id": "com.codepulse.docstring",
+            "Tooltip": "Generate JSDoc or Python docstrings automatically",
+            "States": [
+                {
+                    "Image": "icons/docstring.png",
+                    "Title": "Docs"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "docstring"
+            }
+        },
+        {
+            "Name": "Write Tests",
+            "Id": "com.codepulse.tests",
+            "Tooltip": "Generate Jest or pytest unit tests with edge cases",
+            "States": [
+                {
+                    "Image": "icons/tests.png",
+                    "Title": "Tests"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "tests"
+            }
+        },
+        {
+            "Name": "Refactor",
+            "Id": "com.codepulse.refactor",
+            "Tooltip": "Apply SOLID principles and clean code patterns",
+            "States": [
+                {
+                    "Image": "icons/refactor.png",
+                    "Title": "Refactor"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "refactor"
+            }
+        },
+        {
+            "Name": "Explain Code",
+            "Id": "com.codepulse.explain",
+            "Tooltip": "Get a plain-English explanation of what the code does",
+            "States": [
+                {
+                    "Image": "icons/explain.png",
+                    "Title": "Explain"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "explain"
+            }
+        },
+        {
+            "Name": "Find Bugs",
+            "Id": "com.codepulse.bugfind",
+            "Tooltip": "Hunt for logic errors, null risks, and race conditions",
+            "States": [
+                {
+                    "Image": "icons/bugfind.png",
+                    "Title": "Bugs"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "bugfind"
+            }
+        },
+        {
+            "Name": "PR Summary",
+            "Id": "com.codepulse.prsummary",
+            "Tooltip": "Write a GitHub PR description with What/Why/How/Testing sections",
+            "States": [
+                {
+                    "Image": "icons/prsummary.png",
+                    "Title": "PR"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "prsummary"
+            }
+        },
+        {
+            "Name": "Review Comment",
+            "Id": "com.codepulse.reviewcomment",
+            "Tooltip": "Write a professional inline code review comment",
+            "States": [
+                {
+                    "Image": "icons/reviewcomment.png",
+                    "Title": "Comment"
+                }
+            ],
+            "URL": "http://localhost:3000/action",
+            "Method": "POST",
+            "Body": {
+                "persona": "reviewcomment"
+            }
+        },
+        {
+            "Name": "Set Strictness",
+            "Id": "com.codepulse.strictness",
+            "Tooltip": "MX Dial — Control review strictness from Junior to Principal Engineer",
+            "States": [
+                {
+                    "Image": "icons/junior.png",
+                    "Title": "Junior"
+                },
+                {
+                    "Image": "icons/mid.png",
+                    "Title": "Mid"
+                },
+                {
+                    "Image": "icons/senior.png",
+                    "Title": "Senior"
+                },
+                {
+                    "Image": "icons/principal.png",
+                    "Title": "Principal"
+                }
+            ],
+            "DialURL": "http://localhost:3000/set-strictness",
+            "DialMethod": "POST",
+            "DialBody": {
+                "level": "{dial_value}"
+            }
+        },
+        {
+            "Name": "Scroll Output",
+            "Id": "com.codepulse.scrolloutput",
+            "Tooltip": "Actions Ring (MX Master 4) — Scroll through previous AI review outputs",
+            "States": [
+                {
+                    "Image": "icons/scroll.png",
+                    "Title": "Scroll"
+                }
+            ],
+            "RingURL": "http://localhost:3000/scroll-output",
+            "RingMethod": "POST",
+            "RingBody": {
+                "direction": "{ring_direction}"
+            }
+        }
+    ]
+}

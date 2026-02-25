@@ -1,0 +1,26 @@
+{
+    "name": "codepulse",
+    "version": "1.0.0",
+    "description": "CodePulse — Physical Code Review Console for Logitech MX Creative Console",
+    "private": true,
+    "scripts": {
+        "start": "cd bridge && node server.js",
+        "dev": "cd bridge && npm run dev",
+        "install:bridge": "cd bridge && npm install",
+        "install:ext": "cd vscode-extension && npm install",
+        "install:all": "npm run install:bridge && npm run install:ext",
+        "build:ext": "cd vscode-extension && npm run compile",
+        "setup": "npm run install:all && npm run build:ext",
+        "demo": "node -e \"require('child_process').exec('xdg-open demo-ui/index.html || open demo-ui/index.html')\"",
+        "open:demo": "xdg-open demo-ui/index.html"
+    },
+    "keywords": [
+        "logitech",
+        "vscode",
+        "ai",
+        "code-review",
+        "gemini",
+        "hackathon"
+    ],
+    "license": "MIT"
+}

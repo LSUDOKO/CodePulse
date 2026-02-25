@@ -1,0 +1,77 @@
+{
+    "name": "codepulse",
+    "displayName": "CodePulse",
+    "description": "Physical code review with Logitech MX Creative Console — powered by Google Gemini AI",
+    "version": "0.1.0",
+    "publisher": "codepulse",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other",
+        "Machine Learning",
+        "Programming Languages"
+    ],
+    "icon": "icons/logo.png",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codepulse.reviewSelection",
+                "title": "CodePulse: Review Selection",
+                "icon": "$(circuit-board)"
+            },
+            {
+                "command": "codepulse.openPanel",
+                "title": "CodePulse: Open Panel"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "codepulse.reviewSelection",
+                "key": "ctrl+shift+r",
+                "mac": "cmd+shift+r",
+                "when": "editorHasSelection"
+            }
+        ],
+        "configuration": {
+            "title": "CodePulse",
+            "properties": {
+                "codepulse.bridgeUrl": {
+                    "type": "string",
+                    "default": "http://localhost:3000",
+                    "description": "URL of the CodePulse bridge server"
+                },
+                "codepulse.geminiApiKey": {
+                    "type": "string",
+                    "default": "",
+                    "markdownDescription": "Google Gemini API key (or set GEMINI_API_KEY in .env)"
+                },
+                "codepulse.autoOpenPanel": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically open CodePulse panel on startup"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "lint": "eslint src --ext ts"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/socket.io-client": "^1.4.36",
+        "@types/vscode": "^1.85.0",
+        "typescript": "^5.3.0"
+    },
+    "dependencies": {
+        "socket.io-client": "^4.8.3"
+    }
+}
